@@ -28,6 +28,7 @@ def writeData(todoData: todoData):
 
 
 def readData(index=None):
+    '''Return todo data'''
     with open('./todo.csv', newline='') as csvfile:
         reader = csv.DictReader(csvfile)
         if not index:
@@ -40,6 +41,7 @@ def readData(index=None):
 
 
 def getDataSize():
+    '''Return todo data's size'''
     with open('./todo.csv', newline='') as csvfile:
         reader = csv.reader(csvfile)
         return sum(1 for i in reader) - 1
